@@ -8,11 +8,11 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 
 export class PassowordStrengthBarComponent implements OnChanges  {  
 
-  @Input() passwordToCheck: any;  
+  @Input() passwordToCheck: string;  
   
-  bar0: any;  
-  bar1: any;  
-  bar2: any;  
+  bar0: string;  
+  bar1: string;  
+  bar2: string;  
  
   private colors: Array<string>;
   private defaultColors = ['#F00', '#FF0', '#0F0'];
@@ -25,7 +25,11 @@ export class PassowordStrengthBarComponent implements OnChanges  {
   }
 
   constructor() {
+    this.passwordToCheck = '';
     this.colors = this.defaultColors;
+    this.bar0 = this.defaultBaseColor;
+    this.bar1 = this.defaultBaseColor;
+    this.bar2 = this.defaultBaseColor;
   }  
 
   private checkStrengthPass(pass: string) {

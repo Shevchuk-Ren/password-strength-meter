@@ -12,8 +12,8 @@
                                 <input type="password" class="form-control"  
                                     id="password" name="password" placeholder="Enter password" [(ngModel)]="account.password" #password="ngModel" minlength="5" maxlength="50"required>
                                     <i class="fa-solid fa-eye show-password"></i>  
-                                    <app-passoword-strength-bar [passwordToCheck]="account.password"> 
-                                    </app-passoword-strength-bar>  
+                                <app-passoword-strength-bar [passwordToCheck]="account.password"> 
+                                </app-passoword-strength-bar>  
                             </div>  
                         </div>  
                     </form>
