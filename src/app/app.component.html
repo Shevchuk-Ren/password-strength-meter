@@ -1,0 +1,27 @@
+
+<div class="container">  
+    <h3 class="container-title">Password Strength Bar</h3> 
+    <div class="row">  
+        <div class="col-md-8 col-md-offset-2">  
+            <div class="panel panel-default">  
+                <div class="panel-body">  
+                    <form class="form-horizontal" method="" action="">  
+
+                        <div class="form-group">  
+                            <div class="col-md-6">  
+                                <input type="password" class="form-control"  
+                                    id="password" name="password" placeholder="Enter password" [(ngModel)]="account.password" #password="ngModel" minlength="5" maxlength="50"required>
+                                    <i class="fa-solid fa-eye show-password"></i>  
+
+                                <app-passoword-strength-bar [passwordToCheck]="account.password">  
+                                </app-passoword-strength-bar>  
+                               
+                            </div>  
+                        </div>  
+                    </form>
+                    <app-password-strength-checklist></app-password-strength-checklist>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</div>
