@@ -35,19 +35,19 @@ export class PassowordStrengthBarComponent implements OnChanges  {
   private checkStrengthPass(pass: string) {
   if(pass.length <= 7) {
 
-    return this.getColor2(this.passwordStrenght.short)
+    return this.getColor(this.passwordStrenght.short)
   } else if(pass.match(/^[A-Za-z]+$/) || pass.match(/^[0-9]+$/) || pass.match(/^[\W]+$/)) {
     
-    return this.getColor2(this.passwordStrenght.simple);
+    return this.getColor(this.passwordStrenght.simple);
   }else if(pass.match((/^[A-Za-z0-9]+$/)) || pass.match(/^[^A-Za-z]+$/) || pass.match(/^[^0-9]+$/)) {
     
-    return this.getColor2(this.passwordStrenght.middle);
+    return this.getColor(this.passwordStrenght.middle);
   } else {
-    return this.getColor2(this.passwordStrenght.strong);
+    return this.getColor(this.passwordStrenght.strong);
   }
 }
 
-private getColor2(strengthPass: string) {  
+private getColor(strengthPass: string) {  
 
   let indexColor: {idx: number, col: string } = {
     idx: 0,
@@ -89,7 +89,7 @@ private getColor2(strengthPass: string) {
   private setBarColors(count: number, col: string): void {  
 
       for (let i = 0; i < count; i++) {  
-          (this as any)['bar' + i] = col;  
+          this['bar' + i] = col;  
       }  
   }  
 }
